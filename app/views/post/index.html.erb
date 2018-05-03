@@ -1,0 +1,17 @@
+<h1>힘들구나~!</h1>
+<p>Find me in app/views/post/index.html.erb</p>
+
+<%= form_tag post_new_path do %>
+  <%= text_field_tag  :title %>
+  <%= text_field_tag :body %>
+  <%= submit_tag %>
+<% end %>
+
+<% @posts.each do |posts| %>
+  <h3> title:<%= posts.title %></h6>
+  <div>body:<%= posts.body %></div>
+  <% if not posts.image.nil?%> 
+      <%= image_tag(posts.image) %>
+    <% end %>
+<% end %>
+
